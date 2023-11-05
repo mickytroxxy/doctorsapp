@@ -14,9 +14,9 @@ export default function Pharmacy() {
     const dispatch = useDispatch();
     const {pharmacies,uniqueCategories,products,handleCartAction,cartItems,selectedPharmacy,total,setPharmacies} = useCart();
     return (
-        <View style={{flex: 1,padding:20,paddingBottom:100}}>
+        <View style={{flex: 1}}>
             <StatusBar style='light' />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} style={{width:'100%',padding:20,paddingBottom:100}}>
                 <View>
                     <Text style={{color:'#FFAEA2',fontFamily:'fontBold',fontSize:16}}>NEAR BY PHARMACIES</Text>
                     <View>
@@ -38,7 +38,7 @@ export default function Pharmacy() {
                     </ScrollView>
                 </View>
                 <View>
-                    <LinearGradient colors={["#FFAEA2","#f3f9fe","#faf8fa","#f7f3d0"]} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={{backgroundColor:'#f9f1ed',elevation:20,justifyContent:'center',padding:5,borderTopLeftRadius:10,borderTopRightRadius:10}}>
+                    <LinearGradient colors={["#FFAEA2","#f3f9fe","#faf8fa","#f7f3d0"]} start={{ x: 0, y: 1 }} end={{ x: 1, y: 0 }} style={{backgroundColor:'#f9f1ed',elevation:5,justifyContent:'center',padding:5,borderTopLeftRadius:10,borderTopRightRadius:10}}>
                         <View style={{flexDirection:'row'}}>
                             <View style={{justifyContent:'center'}}>
                                 <Icon name='local-pharmacy' type='MaterialIcons' size={90} color={colors.primary} />
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       width: 180,
       alignItems: 'center',
-      elevation:100,
+      elevation:5,
       shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
       backgroundColor: colors.white,
       borderRadius: 10,
       width:'48%',
-      elevation:100,
+      elevation:5,
       shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -161,7 +161,3 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
   });
-
-
-
-

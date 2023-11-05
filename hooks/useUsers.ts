@@ -71,7 +71,7 @@ const useUsers = () => {
     
     const getServiceProviders = async (latitude:number,longitude:number,range:number) => {
         try {
-            const response : UserProfile[] = await getUsers(latitude,longitude,Constants.isDevice ? range : 30000);
+            const response : UserProfile[] = await getUsers(latitude,longitude,Constants.isDevice ? 300000 : 30000);
             //console.log(JSON.stringify(response))
             if(response.length > 0){
                 dispatch(setUsers([...AI,...response]));

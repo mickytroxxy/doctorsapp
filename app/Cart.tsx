@@ -15,9 +15,9 @@ export default function Cart() {
     const dispatch = useDispatch();
     const {handleCartAction,cartItems,selectedPharmacy,total,setPharmacies} = useCart();
     return (
-        <View style={{flex: 1,padding:20,paddingBottom:100}}>
+        <View style={{flex: 1}}>
             <StatusBar style='light' />
-            <ScrollView showsVerticalScrollIndicator={false}>
+            <ScrollView showsVerticalScrollIndicator={false} style={{padding:20,paddingBottom:100}}>
                 <View>
                     <Text style={{color:'green',fontFamily:'fontBold',fontSize:12,textAlign:'center'}}>REVIEW YOUR CART ITEMS</Text>
                     <View style={{flexDirection:'row',flexWrap:'wrap',gap:12,marginTop:12}}>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       width: 180,
       alignItems: 'center',
-      elevation:100,
+      elevation:5,
       shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
       backgroundColor: colors.white,
       borderRadius: 10,
       width:'48%',
-      elevation:100,
+      elevation:5,
       shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -122,7 +122,3 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
   });
-
-
-
-

@@ -6,14 +6,21 @@ import { useRouter } from 'expo-router';
 const RECORDING_OPTIONS_PRESET_HIGH_QUALITY = {
   android: {
     extension: ".mp3",
-    outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_MPEG_4,
-    audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_AMR_NB,
+    audioQuality: Audio.RECORDING_OPTION_IOS_AUDIO_QUALITY_MIN,
     sampleRate: 44100,
     numberOfChannels: 2,
     bitRate: 128000,
+    linearPCMBitDepth: 16,
+    linearPCMIsBigEndian: false,
+    linearPCMIsFloat: false,
+    // outputFormat: Audio.RECORDING_OPTION_ANDROID_OUTPUT_FORMAT_MPEG_4,
+    // audioEncoder: Audio.RECORDING_OPTION_ANDROID_AUDIO_ENCODER_AMR_NB,
+    // sampleRate: 44100,
+    // numberOfChannels: 2,
+    // bitRate: 128000,
   },
   ios: {
-    extension: ".wav",
+    extension: ".mp3",
     audioQuality: Audio.RECORDING_OPTION_IOS_AUDIO_QUALITY_MIN,
     sampleRate: 44100,
     numberOfChannels: 2,
@@ -23,7 +30,7 @@ const RECORDING_OPTIONS_PRESET_HIGH_QUALITY = {
     linearPCMIsFloat: false,
   },
 };
-const OPEN_AI_KEY = "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";
+const OPEN_AI_KEY = "";
 const ELEVEN_LABS_API = "e09eaa27f3857c21e7879567bfeff795"
 
 
@@ -42,9 +49,11 @@ const useAudioRecording = () => {
         playsInSilentModeIOS: true,
       });
       
-      const { recording } = await Audio.Recording.createAsync(
-        RECORDING_OPTIONS_PRESET_HIGH_QUALITY
-      );
+      // const { recording } = await Audio.Recording.createAsync(
+      //   RECORDING_OPTIONS_PRESET_HIGH_QUALITY
+      // );
+      const { recording } = await Audio.Recording.createAsync( Audio.RecordingOptionsPresets.HIGH_QUALITY
+        );
       setRecording(recording);
       console.log('Recording started');
     } catch (err) {

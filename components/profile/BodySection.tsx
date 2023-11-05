@@ -20,7 +20,7 @@ export const BodySection = () =>{
              <Stack.Screen options={{ 
                 headerRight: () => (
                     profileOwner ? <TouchableOpacity onPress={logOut} style={{}}><Icon type="FontAwesome" name="sign-out" size={40} color={colors.tomato} /></TouchableOpacity> :
-                    (activeProfile.type === 'AI_DOCTOR' && <TouchableOpacity onPress={() => {navigation.push('AICallBox')}} style={{}}><Icon type="FontAwesome" name="phone" size={40} color={colors.green} /></TouchableOpacity>)
+                    (activeProfile.type === 'AI_DOCTOR' && <TouchableOpacity onPress={() => {navigation.push('AICallBox')}} style={{}}><Icon type="FontAwesome" name="phone" size={40} color={colors.white} /></TouchableOpacity>)
                 )
             }} />
             <LinearGradient colors={["#fff","#e8e9f5","#fff","#F6BDA7"]} style={styles.footerStyle}>
